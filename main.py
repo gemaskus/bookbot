@@ -28,12 +28,16 @@ def main():
     letter_nums = getNumEachLetter(file_contents)
     letter_list = []
     for letter in letter_nums:
-        print(letter)
-        print(letter_nums[letter])
+        #print(letter)
+        #print(letter_nums[letter])
         letter_list.append({"letter": letter, "num": letter_nums[letter]})
     letter_list.sort(reverse=True, key=sortOn)
 
-    print(letter_nums)
+    for i in range(0,len(letter_list)):
+        new_dict = letter_list[i]
+        letter = new_dict["letter"]
+        num = new_dict["num"]
+        print(f"the letter '{letter}' was found {num} times")
 
 if __name__ == "__main__":
     main()
